@@ -109,6 +109,7 @@
 <tr><td><code>READ_CONTACTS</code></td><td><strong>"Rehberden seç"</strong> — yalnız siz o düğmeye bastığınızda istenir; seçtiğiniz tek kişinin adı ve telefonu forma yazılır (bkz. 3.1). İzin vermezseniz form elle doldurulmaya devam eder. Yazma izni (<code>WRITE_CONTACTS</code>) <strong>istenmez.</strong></td></tr>
 </tbody></table>
 <p><strong><code>INTERNET</code> izni yayın sürümünde YOKTUR.</strong> (Flutter onu yalnız hata ayıklama ve profil yapılarına ekler.) Paylaşım, sizin seçtiğiniz uygulamaya sistemin paylaşım penceresi üzerinden devredilir; ağa çıkan taraf o uygulamadır.</p>
+<p><strong>Güncelleme denetimi.</strong> Uygulama her açılışta telefonunuzdaki <strong>Google Play Store</strong> uygulamasına &#8220;bu uygulamanın yeni bir sürümü var mı?&#8221; diye sorar ve varsa güncelleme ekranını gösterir. Bu soru ağa <strong>bizim</strong> tarafımızdan çıkılarak sorulmaz; soruyu da cevabı da Play Store uygulaması taşır. Bu sırada Play&#8217;e <strong>hiçbir defter veriniz</strong> gönderilmez &#8212; gönderilecek bir bağlantımız zaten yoktur.</p>
 <p>Konum, <strong>kamera</strong>, mikrofon ve depolama izinleri <strong>istenmez</strong>. Belge eklerken fotoğraf çekmek için telefonun kendi kamera ekranı açılır (<code>ACTION_IMAGE_CAPTURE</code>); bu, uygulamanın kameraya doğrudan erişmesi değildir ve ayrı bir izin gerektirmez. Aynı biçimde galeriden seçtiğiniz tek dosya sistemin seçicisinden gelir, uygulama galerinizi göremez.</p>
 <hr>
 <h2>8. Çocuklar</h2>
