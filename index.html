@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gizlilik Politikası — Gezen Defter</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: #ffffff; color: #14201a; }
+  @media (prefers-color-scheme: dark) { body { background: #101713; color: #e6ece8; } }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .35em; }
+  h2 { font-size: 1.15rem; margin: 2.2em 0 .6em; }
+  h3 { font-size: 1rem; margin: 1.6em 0 .5em; }
+  hr { border: 0; border-top: 1px solid rgba(127,127,127,.28); margin: 2em 0; }
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: .95rem; }
+  th, td { text-align: left; padding: .5em .6em; border-bottom: 1px solid rgba(127,127,127,.22); vertical-align: top; }
+  th { font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; opacity: .75; }
+  code { background: rgba(127,127,127,.14); padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+  ul, ol { padding-left: 1.2em; }
+  li { margin: .3em 0; }
+</style>
+</head>
+<body>
+<h1>Gizlilik Politikası — Gezen Defter</h1>
+<p><strong>Son güncelleme:</strong> 5 Eylül 2026 <strong>Uygulama:</strong> Gezen Defter (<code>com.gezendefter.app</code>)</p>
+<hr>
+<h2>Kısaca</h2>
+<p>Gezen Defter bir <strong>veresiye defteridir</strong>. Girdiğiniz her şey <strong>sizin telefonunuzda</strong> durur. Sunucumuz yok, hesabınız yok, verileriniz bize gönderilmez. Defteriniz telefonun dışına iki durumda çıkar: siz kendi elinizle paylaştığınızda, ya da telefonunuzun Google yedeklemesi açıksa Android onu sizin Google hesabınıza yedeklediğinde (bkz. 5. Yedekler).</p>
+<hr>
+<h2>1. Hangi bilgileri işliyoruz</h2>
+<p>Uygulamayı kullanırken siz şunları girersiniz:</p>
+<table><thead><tr><th>Bilgi</th><th>Nerede kullanılır</th></tr></thead><tbody>
+<tr><td>Hesap (müşteri/tedarikçi) adı, telefonu, adresi, vergi bilgileri, notları</td><td>Defterinizde kimin kim olduğunu ayırt etmek için</td></tr>
+<tr><td>Borç ve tahsilat hareketleri: tutar, tarih, vade, açıklama, belge no</td><td>Bakiye ve vade hesabı için</td></tr>
+<tr><td>Çek/senet bilgileri: banka, numara, tutar, vade</td><td>Portföy takibi için</td></tr>
+<tr><td>Kayda iliştirdiğiniz fotoğraf ya da PDF (fatura, dekont, fiş)</td><td>Kaydın kanıtı olarak, defterinizde saklanmak için</td></tr>
+<tr><td>Uygulama ayarları: tema, yedek ve bildirim tercihleri</td><td>Tercihlerinizi hatırlamak için</td></tr>
+<tr><td><strong>Rehberden seçtiğiniz kişinin adı ve telefonu</strong></td><td>Yeni hesap formunu doldurmak için — yalnız siz "Rehberden seç" dediğinizde ve yalnız sizin seçtiğiniz tek kişi (bkz. 3.1)</td></tr>
+</tbody></table>
+<p><strong>Bu bilgilerin hepsini siz girersiniz.</strong> Uygulama arka planda hiçbir bilgi toplamaz.</p>
+<hr>
+<h2>2. Nerede saklanıyor</h2>
+<p>Bütün veriler telefonunuzun içindeki bir <strong>SQLite veritabanı dosyasında</strong>, uygulamaya ayrılmış özel alanda tutulur. Bu alana başka uygulamalar erişemez.</p>
+<p>İliştirdiğiniz fotoğraf ve PDF'ler veritabanının içine değil, aynı özel alandaki <code>belge</code> klasörüne <strong>dosya olarak</strong> kopyalanır; defterde yalnız dosyanın künyesi (adı, türü, boyutu, yolu) durur.</p>
+<p><strong>Sunucuya gönderilmez.</strong> Uygulamanın bağlandığı bir arka uç yoktur.</p>
+<p>Uygulamayı sildiğinizde bu veriler de telefonunuzdan silinir.</p>
+<hr>
+<h2>3. Neleri TOPLAMIYORUZ</h2>
+<p>Açıkça belirtelim — uygulama şunları yapmaz:</p>
+<ul>
+<li>Hesap açtırmaz, giriş istemez, e-posta ya da telefon numaranızı istemez</li>
+<li>Konumunuzu okumaz</li>
+<li>Mikrofonunuza erişmez</li>
+<li>Rehberinizi <strong>kendiliğinden okumaz</strong>: rehbere yalnız siz "Rehberden seç" düğmesine bastığınızda, yalnız sizin seçtiğiniz tek kişi için bakılır — ayrıntısı hemen aşağıda (3.1)</li>
+<li>Fotoğraflarınızı <strong>kendiliğinden</strong> okumaz: yalnız siz bir kayda belge eklerken, sizin seçtiğiniz tek fotoğrafı alır. Kamerayı da yalnız siz "Fotoğraf çek" dediğinizde, telefonun kendi kamera ekranı üzerinden açar — uygulamanın <code>CAMERA</code> izni <strong>yoktur</strong></li>
+<li>Reklam göstermez, reklam kimliği kullanmaz</li>
+<li>Analitik, kullanım istatistiği ya da çökme raporu toplamaz</li>
+<li>Üçüncü taraf izleme (tracking) araçları içermez</li>
+<li>Verilerinizi kimseye satmaz, kiralamaz, paylaşmaz</li>
+</ul>
+<h3>3.1 Kişiler (rehber) — ne oluyor, ne olmuyor</h3>
+<p>Yeni bir hesap açarken telefon alanının altında <strong>"Rehberden seç"</strong> düğmesi vardır. Amacı tek: müşterinin adını ve numarasını elle yazmak zorunda kalmamanız.</p>
+<p><strong>Ne oluyor:</strong></p>
+<ol>
+<li>Düğmeye bastığınızda telefon size <strong>kişiler izni</strong> sorar.</li>
+<li>İzin verirseniz <strong>telefonun kendi kişi seçici ekranı</strong> açılır ve siz bir kişi seçersiniz.</li>
+<li>Seçtiğiniz kişinin <strong>adı ve telefon numarası</strong> formdaki alanlara yazılır. Kaydetmeden önce ikisini de değiştirebilirsiniz.</li>
+</ol>
+<p><strong>Ne olmuyor:</strong></p>
+<ul>
+<li><strong>Rehberinizin tamamı okunmaz.</strong> Uygulama kişi listenizi hiçbir zaman toplu olarak istemez; listeyi telefonun kendisi gösterir ve uygulamaya yalnız <strong>sizin seçtiğiniz kişi</strong> ulaşır.</li>
+<li><strong>Rehber verisi telefonunuzdan çıkmaz.</strong> Hiçbir sunucuya gönderilmez; zaten uygulamanın bağlandığı bir sunucu yoktur.</li>
+<li><strong>Ayrı bir yerde saklanmaz.</strong> Ad ve numara yalnız sizin açtığınız hesabın kaydına, telefonunuzdaki deftere yazılır — rehberin bir kopyası tutulmaz.</li>
+<li><strong>Rehberinize hiçbir şey yazılmaz.</strong> Uygulama kişi eklemez, değiştirmez, silmez; <strong>yazma izni (<code>WRITE_CONTACTS</code>) istemez.</strong></li>
+<li><strong>Fotoğraf, e-posta, adres, doğum günü gibi öteki alanlar alınmaz</strong> — yalnız ad ve telefon.</li>
+</ul>
+<p><strong>İzin vermezseniz ne olur?</strong> Hiçbir şey kapanmaz: ekranda ne olduğu yazar ve adı ile telefonu her zamanki gibi elle yazarsınız. İzni sonradan telefon ayarlarından da kapatabilirsiniz.</p>
+<hr>
+<h2>4. İnternet bağlantısı</h2>
+<p>Uygulama <strong>çevrimdışı çalışır</strong>. İnternete yalnızca siz bir işlem başlattığınızda ve yalnızca sizin seçtiğiniz uygulama üzerinden çıkılır:</p>
+<ul>
+<li><strong>Yedeği paylaştığınızda</strong> — dosya, sizin seçtiğiniz uygulamaya (WhatsApp, e-posta, bulut depolama…) verilir.</li>
+<li><strong>"Ekstre gönder" dediğinizde</strong> — hesabın özeti bir metin olarak hazırlanır ve <strong>WhatsApp</strong> o metinle açılır (kayıtta numara varsa doğrudan o kişiye). WhatsApp telefonunuzda yoksa bunu size söyler ve sistemin paylaşım penceresini açar. <strong>Mesajı gönderme kararı ve gönderme işlemi sizindir</strong>; uygulama sizin adınıza hiçbir mesaj göndermez.</li>
+<li><strong>Bir telefon numarasına dokunduğunuzda</strong> — önce "aransın mı?" diye sorulur; <strong>onaylamazsanız arama başlamaz.</strong> Onaylarsanız telefonun kendi arama ekranı açılır.</li>
+</ul>
+<p>Bu durumlarda veri, <strong>bizim değil sizin seçtiğiniz uygulamaya</strong> gider ve oradan sonrası o uygulamanın gizlilik politikasına tabidir.</p>
+<hr>
+<h2>5. Yedekler</h2>
+<ul>
+<li><strong>Cihaz yedeği:</strong> Uygulama günde bir kez defterinizin bir kopyasını telefonunuzun kendi özel alanına yazar (en yeni 7 dosya tutulur). Bu kopya telefondan dışarı çıkmaz.</li>
+<li><strong>Paylaşılan yedek:</strong> "Yedeği paylaş" dediğinizde bir <code>.json</code> dosyası hazırlanır ve sistemin paylaşım penceresi açılır. <strong>Nereye gideceğine siz karar verirsiniz.</strong> Dosya defterinizin tamamını içerir — hesap adları ve telefonları dahil. Güvendiğiniz bir yere gönderin.</li>
+<li><strong>Android sistem yedeği:</strong> Telefonunuzun ayarlarında Google yedeklemesi açıksa, Android uygulama verisini kendi kurallarına göre Google hesabınıza yedekleyebilir. Bu, Google'ın sağladığı bir sistem özelliğidir; biz ne başlatırız ne de içeriğine erişebiliriz. Telefonunuzun ayarlarından kapatabilirsiniz.</li>
+</ul>
+<hr>
+<h2>6. Bildirimler</h2>
+<p>Vade hatırlatması <strong>varsayılan olarak kapalıdır</strong>. Ayarlar ekranından açtığınızda telefon size bildirim izni sorar. İzin verirseniz, ertesi gün vadesi dolan kayıtlar için günde <strong>tek</strong> bir özet bildirim planlanır.</p>
+<p>Bildirimler tamamen telefonunuzda üretilir ve zamanlanır — hiçbir sunucudan gelmez. Ayarlardan istediğiniz an kapatabilirsiniz.</p>
+<hr>
+<h2>7. İzinler</h2>
+<p>Uygulamanın istediği izinler ve gerekçeleri:</p>
+<p>Aşağıdaki liste <strong>yayın (release) APK'sının birleşik manifestinden okunmuştur</strong>, tahmin değildir (5 Eylül 2026):</p>
+<table><thead><tr><th>İzin</th><th>Ne için</th></tr></thead><tbody>
+<tr><td><code>POST_NOTIFICATIONS</code></td><td>Vade hatırlatması — yalnız siz açarsanız istenir</td></tr>
+<tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Telefon yeniden başladığında planlanmış hatırlatmanın kaybolmaması için</td></tr>
+<tr><td><code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code></td><td>Açılış kilidini parmak iziyle açmak — yalnız siz açarsanız kullanılır</td></tr>
+<tr><td><code>VIBRATE</code></td><td>Bildirim geldiğinde telefonun titremesi</td></tr>
+<tr><td><code>READ_CONTACTS</code></td><td><strong>"Rehberden seç"</strong> — yalnız siz o düğmeye bastığınızda istenir; seçtiğiniz tek kişinin adı ve telefonu forma yazılır (bkz. 3.1). İzin vermezseniz form elle doldurulmaya devam eder. Yazma izni (<code>WRITE_CONTACTS</code>) <strong>istenmez.</strong></td></tr>
+</tbody></table>
+<p><strong><code>INTERNET</code> izni yayın sürümünde YOKTUR.</strong> (Flutter onu yalnız hata ayıklama ve profil yapılarına ekler.) Paylaşım, sizin seçtiğiniz uygulamaya sistemin paylaşım penceresi üzerinden devredilir; ağa çıkan taraf o uygulamadır.</p>
+<p>Konum, <strong>kamera</strong>, mikrofon ve depolama izinleri <strong>istenmez</strong>. Belge eklerken fotoğraf çekmek için telefonun kendi kamera ekranı açılır (<code>ACTION_IMAGE_CAPTURE</code>); bu, uygulamanın kameraya doğrudan erişmesi değildir ve ayrı bir izin gerektirmez. Aynı biçimde galeriden seçtiğiniz tek dosya sistemin seçicisinden gelir, uygulama galerinizi göremez.</p>
+<hr>
+<h2>8. Çocuklar</h2>
+<p>Uygulama işletme kaydı tutmaya yöneliktir ve çocuklara yönelik değildir. Çocuklardan bilerek veri toplanmaz.</p>
+<hr>
+<h2>9. Verileriniz üzerindeki haklarınız</h2>
+<p>Verileriniz sizde olduğu için denetimi de tamamen sizdedir:</p>
+<ul>
+<li><strong>Görmek:</strong> Defterin tamamı uygulamanın içinde açıktır. "Yedeği paylaş" ile okunabilir bir <code>.json</code> dosyası olarak dışa aktarabilirsiniz.</li>
+<li><strong>Düzeltmek:</strong> Her kayıt uygulama içinden düzenlenebilir.</li>
+<li><strong>Silmek:</strong> Kayıtları tek tek silebilir ya da uygulamayı kaldırarak tümünü silebilirsiniz. Bir belgeyi kaldırdığınızda dosyası da diskten silinir. Uygulamayı kaldırmak cihazdaki yedekleri ve belgeleri de siler.</li>
+</ul>
+<p>Bizde sizin verinizden bir kopya bulunmadığı için, silme talebi için bize başvurmanız gerekmez.</p>
+<hr>
+<h2>10. Değişiklikler</h2>
+<p>Bu politika değişirse, güncellenmiş metin uygulamanın mağaza sayfasında ve bu adreste yayımlanır. Yukarıdaki "Son güncelleme" tarihi değişimi gösterir.</p>
+<hr>
+<h2>11. İletişim</h2>
+<p>Soru ve talepleriniz için: <strong><a href="mailto:talhatarhan@gmail.com">talhatarhan@gmail.com</a></strong></p>
+<hr>
+</body>
+</html>
