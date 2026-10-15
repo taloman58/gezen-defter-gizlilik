@@ -24,10 +24,10 @@
 </head>
 <body>
 <h1>Gizlilik Politikası — Gezen Defter</h1>
-<p><strong>Son güncelleme:</strong> 5 Ekim 2026 <strong>Uygulama:</strong> Gezen Defter (<code>com.gezendefter.app</code>)</p>
+<p><strong>Son güncelleme:</strong> 15 Ekim 2026 <strong>Uygulama:</strong> Gezen Defter (<code>com.gezendefter.app</code>)</p>
 <hr>
 <h2>Kısaca</h2>
-<p>Gezen Defter bir <strong>veresiye defteridir</strong>. Girdiğiniz her şey <strong>sizin telefonunuzda</strong> durur. Sunucumuz yok, hesabınız yok, verileriniz bize gönderilmez. Defteriniz telefonun dışına iki durumda çıkar: siz kendi elinizle paylaştığınızda, ya da telefonunuzun Google yedeklemesi açıksa Android onu sizin Google hesabınıza yedeklediğinde (bkz. 5. Yedekler).</p>
+<p>Gezen Defter bir <strong>veresiye defteridir</strong>. Girdiğiniz her şey <strong>sizin telefonunuzda</strong> durur. Sunucumuz yok, hesabınız yok, <strong>defteriniz bize gönderilmez</strong>. Uygulama internete yalnız iki küçük iş için çıkar: bizden <strong>duyuru</strong> almak ve uygulama <strong>hata verdiğinde</strong> hatanın teknik kaydını bize iletmek (Google Firebase, bkz. 4.1). Bu ikisinde defterinizden hiçbir bilgi yoktur. Defteriniz telefonun dışına iki durumda çıkar: siz kendi elinizle paylaştığınızda, ya da telefonunuzun Google yedeklemesi açıksa Android onu sizin Google hesabınıza yedeklediğinde (bkz. 5. Yedekler).</p>
 <hr>
 <h2>1. Hangi bilgileri işliyoruz</h2>
 <p>Uygulamayı kullanırken siz şunları girersiniz:</p>
@@ -44,7 +44,7 @@
 <h2>2. Nerede saklanıyor</h2>
 <p>Bütün veriler telefonunuzun içindeki bir <strong>SQLite veritabanı dosyasında</strong>, uygulamaya ayrılmış özel alanda tutulur. Bu alana başka uygulamalar erişemez.</p>
 <p>İliştirdiğiniz fotoğraf ve PDF'ler veritabanının içine değil, aynı özel alandaki <code>belge</code> klasörüne <strong>dosya olarak</strong> kopyalanır; defterde yalnız dosyanın künyesi (adı, türü, boyutu, yolu) durur.</p>
-<p><strong>Sunucuya gönderilmez.</strong> Uygulamanın bağlandığı bir arka uç yoktur.</p>
+<p><strong>Defteriniz sunucuya gönderilmez.</strong> Uygulamanın defteri saklayan bir arka ucu yoktur.</p>
 <p>Uygulamayı sildiğinizde bu veriler de telefonunuzdan silinir.</p>
 <hr>
 <h2>3. Neleri TOPLAMIYORUZ</h2>
@@ -56,7 +56,7 @@
 <li>Rehberinizi <strong>kendiliğinden okumaz</strong>: rehbere yalnız siz "Rehberden seç" düğmesine bastığınızda, yalnız sizin seçtiğiniz tek kişi için bakılır — ayrıntısı hemen aşağıda (3.1)</li>
 <li>Fotoğraflarınızı <strong>kendiliğinden</strong> okumaz: yalnız siz bir kayda belge eklerken, sizin seçtiğiniz tek fotoğrafı alır. Kamerayı da yalnız siz "Fotoğraf çek" dediğinizde, telefonun kendi kamera ekranı üzerinden açar — uygulamanın <code>CAMERA</code> izni <strong>yoktur</strong></li>
 <li>Reklam göstermez, reklam kimliği kullanmaz</li>
-<li>Analitik, kullanım istatistiği ya da çökme raporu toplamaz</li>
+<li>Analitik ya da kullanım istatistiği toplamaz: hangi ekranı açtığınızı, ne kadar kullandığınızı bilmeyiz. (Uygulama hata verdiğinde gönderilen teknik kayıt için bkz. 4.1.)</li>
 <li>Üçüncü taraf izleme (tracking) araçları içermez</li>
 <li>Verilerinizi kimseye satmaz, kiralamaz, paylaşmaz</li>
 </ul>
@@ -71,7 +71,7 @@
 <p><strong>Ne olmuyor:</strong></p>
 <ul>
 <li><strong>Rehberinizin tamamı okunmaz.</strong> Uygulama kişi listenizi hiçbir zaman toplu olarak istemez; listeyi telefonun kendisi gösterir ve uygulamaya yalnız <strong>sizin seçtiğiniz kişi</strong> ulaşır.</li>
-<li><strong>Rehber verisi telefonunuzdan çıkmaz.</strong> Hiçbir sunucuya gönderilmez; zaten uygulamanın bağlandığı bir sunucu yoktur.</li>
+<li><strong>Rehber verisi telefonunuzdan çıkmaz.</strong> Hiçbir sunucuya gönderilmez.</li>
 <li><strong>Ayrı bir yerde saklanmaz.</strong> Ad ve numara yalnız sizin açtığınız hesabın kaydına, telefonunuzdaki deftere yazılır — rehberin bir kopyası tutulmaz.</li>
 <li><strong>Rehberinize hiçbir şey yazılmaz.</strong> Uygulama kişi eklemez, değiştirmez, silmez; <strong>yazma izni (<code>WRITE_CONTACTS</code>) istemez.</strong></li>
 <li><strong>Fotoğraf, e-posta, adres, doğum günü gibi öteki alanlar alınmaz</strong> — yalnız ad ve telefon.</li>
@@ -89,6 +89,13 @@
 <li><strong>Bir telefon numarasına dokunduğunuzda</strong> — önce "aransın mı?" diye sorulur; <strong>onaylamazsanız arama başlamaz.</strong> Onaylarsanız telefonun kendi arama ekranı açılır.</li>
 </ul>
 <p>Bu durumlarda veri, <strong>bizim değil sizin seçtiğiniz uygulamaya</strong> gider ve oradan sonrası o uygulamanın gizlilik politikasına tabidir.</p>
+<h3>4.1 Google Firebase: duyuru ve hata kaydı</h3>
+<p>Uygulama, Google'ın <strong>Firebase</strong> hizmetinin iki parçasını kullanır. İkisi de <strong>defterinizi bilmez</strong>: hesap adı, tutar, telefon numarası, belge ya da rehber bilgisi gönderilmez.</p>
+<ul>
+<li><strong>Duyuru (Firebase Cloud Messaging):</strong> Yeni sürüm ya da kullanım ipucu gibi <strong>herkese aynı giden</strong> kısa mesajlar içindir. Bunun için telefonunuza Google tarafından bir <strong>bildirim kimliği</strong> verilir; kimlik size değil uygulamanın bu kurulumuna aittir ve adınızı, numaranızı içermez. Duyurular Android ayarlarındaki <strong>"Duyurular"</strong> kanalından, vade hatırlatmasından ayrı olarak kapatılabilir.</li>
+<li><strong>Hata kaydı (Firebase Crashlytics):</strong> Uygulama beklenmedik bir hata verdiğinde, hatanın teknik kaydı gönderilir: hatanın kodun neresinde olduğu, uygulamanın sürümü, telefonun modeli ve Android sürümü, kurulumun rastgele bir kimliği. Amaç yalnız <strong>hatayı bulup düzeltmektir</strong>. Google bu kayıtları <strong>90 gün</strong> saklar.</li>
+</ul>
+<p><strong>Google Analytics kullanılmaz.</strong> Reklam kimliği okunmaz. Bu veriler Google'ın sunucularında, Google'ın <a href="https://firebase.google.com/support/privacy">Firebase gizlilik koşullarına</a> göre işlenir ve Türkiye dışındaki sunucularda bulunabilir.</p>
 <hr>
 <h2>5. Yedekler</h2>
 <ul>
@@ -99,20 +106,23 @@
 <hr>
 <h2>6. Bildirimler</h2>
 <p>Vade hatırlatması <strong>varsayılan olarak kapalıdır</strong>. Ayarlar ekranından açtığınızda telefon size bildirim izni sorar. İzin verirseniz, ertesi gün vadesi dolan kayıtlar için günde <strong>tek</strong> bir özet bildirim planlanır.</p>
-<p>Bildirimler tamamen telefonunuzda üretilir ve zamanlanır — hiçbir sunucudan gelmez. Ayarlardan istediğiniz an kapatabilirsiniz.</p>
+<p>Vade hatırlatmaları tamamen telefonunuzda üretilir ve zamanlanır; hiçbir sunucudan gelmez, çünkü defterinizi yalnız telefonunuz bilir. Ayarlardan istediğiniz an kapatabilirsiniz.</p>
+<p><strong>Duyurular</strong> ise bizden gelir (bkz. 4.1) ve herkese aynı metindir; sizin defterinizle ilgili bir şey söylemez. Android 13 ve sonrasında duyurular da bildirim izni verdiyseniz görünür; izin istemek için açılışta ayrıca soru sorulmaz.</p>
 <hr>
 <h2>7. İzinler</h2>
 <p>Uygulamanın istediği izinler ve gerekçeleri:</p>
-<p>Aşağıdaki liste <strong>yayın (release) APK'sının birleşik manifestinden okunmuştur</strong>, tahmin değildir (5 Eylül 2026):</p>
+<p>Aşağıdaki liste <strong>uygulamanın birleşik manifestinden okunmuştur</strong>, tahmin değildir (15 Ekim 2026):</p>
 <table><thead><tr><th>İzin</th><th>Ne için</th></tr></thead><tbody>
 <tr><td><code>POST_NOTIFICATIONS</code></td><td>Vade hatırlatması — yalnız siz açarsanız istenir</td></tr>
 <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Telefon yeniden başladığında planlanmış hatırlatmanın kaybolmaması için</td></tr>
 <tr><td><code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code></td><td>Açılış kilidini parmak iziyle açmak — yalnız siz açarsanız kullanılır</td></tr>
 <tr><td><code>VIBRATE</code></td><td>Bildirim geldiğinde telefonun titremesi</td></tr>
+<tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Duyuru almak ve hata kaydını iletmek (bkz. 4.1). Defteriniz bu bağlantıdan gönderilmez.</td></tr>
+<tr><td><code>com.google.android.c2dm.permission.RECEIVE</code>, <code>WAKE_LOCK</code></td><td>Duyurunun, uygulama kapalıyken de telefona ulaşabilmesi (Firebase'in kendi izinleri)</td></tr>
 <tr><td><code>READ_CONTACTS</code></td><td><strong>"Rehberden seç"</strong> — yalnız siz o düğmeye bastığınızda istenir; seçtiğiniz tek kişinin adı ve telefonu forma yazılır (bkz. 3.1). İzin vermezseniz form elle doldurulmaya devam eder. Yazma izni (<code>WRITE_CONTACTS</code>) <strong>istenmez.</strong></td></tr>
 </tbody></table>
-<p><strong><code>INTERNET</code> izni yayın sürümünde YOKTUR.</strong> (Flutter onu yalnız hata ayıklama ve profil yapılarına ekler.) Paylaşım, sizin seçtiğiniz uygulamaya sistemin paylaşım penceresi üzerinden devredilir; ağa çıkan taraf o uygulamadır.</p>
-<p><strong>Güncelleme denetimi.</strong> Uygulama her açılışta telefonunuzdaki <strong>Google Play Store</strong> uygulamasına &#8220;bu uygulamanın yeni bir sürümü var mı?&#8221; diye sorar ve varsa güncelleme ekranını gösterir. Bu soru ağa <strong>bizim</strong> tarafımızdan çıkılarak sorulmaz; soruyu da cevabı da Play Store uygulaması taşır. Bu sırada Play&#8217;e <strong>hiçbir defter veriniz</strong> gönderilmez &#8212; gönderilecek bir bağlantımız zaten yoktur.</p>
+<p>Paylaşım, sizin seçtiğiniz uygulamaya sistemin paylaşım penceresi üzerinden devredilir; o durumda ağa çıkan taraf o uygulamadır.</p>
+<p><strong>Güncelleme denetimi.</strong> Uygulama her açılışta telefonunuzdaki <strong>Google Play Store</strong> uygulamasına &#8220;bu uygulamanın yeni bir sürümü var mı?&#8221; diye sorar ve varsa güncelleme ekranını gösterir. Bu soru ağa <strong>bizim</strong> tarafımızdan çıkılarak sorulmaz; soruyu da cevabı da Play Store uygulaması taşır. Bu sırada Play&#8217;e <strong>hiçbir defter veriniz</strong> gönderilmez.</p>
 <p>Konum, <strong>kamera</strong>, mikrofon ve depolama izinleri <strong>istenmez</strong>. Belge eklerken fotoğraf çekmek için telefonun kendi kamera ekranı açılır (<code>ACTION_IMAGE_CAPTURE</code>); bu, uygulamanın kameraya doğrudan erişmesi değildir ve ayrı bir izin gerektirmez. Aynı biçimde galeriden seçtiğiniz tek dosya sistemin seçicisinden gelir, uygulama galerinizi göremez.</p>
 <hr>
 <h2>8. Çocuklar</h2>
@@ -125,7 +135,7 @@
 <li><strong>Düzeltmek:</strong> Her kayıt uygulama içinden düzenlenebilir.</li>
 <li><strong>Silmek:</strong> Kayıtları tek tek silebilir ya da uygulamayı kaldırarak tümünü silebilirsiniz. Bir belgeyi kaldırdığınızda dosyası da diskten silinir. Uygulamayı kaldırmak cihazdaki yedekleri ve belgeleri de siler.</li>
 </ul>
-<p>Bizde sizin verinizden bir kopya bulunmadığı için, silme talebi için bize başvurmanız gerekmez.</p>
+<p>Bizde defterinizden bir kopya bulunmadığı için, silme talebi için bize başvurmanız gerekmez. Hata kayıtları 90 gün sonra kendiliğinden silinir; daha önce silinmesini isterseniz bize yazabilirsiniz.</p>
 <hr>
 <h2>10. Değişiklikler</h2>
 <p>Bu politika değişirse, güncellenmiş metin uygulamanın mağaza sayfasında ve bu adreste yayımlanır. Yukarıdaki "Son güncelleme" tarihi değişimi gösterir.</p>
