@@ -24,10 +24,10 @@
 </head>
 <body>
 <h1>Gizlilik Politikası — Gezen Defter</h1>
-<p><strong>Son güncelleme:</strong> 15 Ekim 2026 <strong>Uygulama:</strong> Gezen Defter (<code>com.gezendefter.app</code>)</p>
+<p><strong>Son güncelleme:</strong> 17 Ekim 2026 <strong>Uygulama:</strong> Gezen Defter (<code>com.gezendefter.app</code>)</p>
 <hr>
 <h2>Kısaca</h2>
-<p>Gezen Defter bir <strong>veresiye defteridir</strong>. Girdiğiniz her şey <strong>sizin telefonunuzda</strong> durur. Sunucumuz yok, hesabınız yok, <strong>defteriniz bize gönderilmez</strong>. Uygulama internete yalnız iki küçük iş için çıkar: bizden <strong>duyuru</strong> almak ve uygulama <strong>hata verdiğinde</strong> hatanın teknik kaydını bize iletmek (Google Firebase, bkz. 4.1). Bu ikisinde defterinizden hiçbir bilgi yoktur. Defteriniz telefonun dışına iki durumda çıkar: siz kendi elinizle paylaştığınızda, ya da telefonunuzun Google yedeklemesi açıksa Android onu sizin Google hesabınıza yedeklediğinde (bkz. 5. Yedekler).</p>
+<p>Gezen Defter bir <strong>veresiye defteridir</strong>. Girdiğiniz her şey <strong>sizin telefonunuzda</strong> durur. Defteriniz için sunucumuz yok, hesabınız yok, <strong>defteriniz bize gönderilmez</strong>. Uygulama internete yalnız üç küçük iş için çıkar: bizden <strong>duyuru</strong> almak, uygulama <strong>hata verdiğinde</strong> hatanın teknik kaydını bize iletmek (Google Firebase, bkz. 4.1) ve siz <strong>"Görüş bildirin"</strong> ile bize yazdığınızda mesajınızı ulaştırıp cevabımızı size getirmek (bkz. 4.2). Bu üçünde defterinizden hiçbir bilgi yoktur. Defteriniz telefonun dışına iki durumda çıkar: siz kendi elinizle paylaştığınızda, ya da telefonunuzun Google yedeklemesi açıksa Android onu sizin Google hesabınıza yedeklediğinde (bkz. 5. Yedekler).</p>
 <hr>
 <h2>1. Hangi bilgileri işliyoruz</h2>
 <p>Uygulamayı kullanırken siz şunları girersiniz:</p>
@@ -85,7 +85,6 @@
 <li><strong>"Ekstre gönder" dediğinizde</strong> — hesabın özeti bir metin olarak hazırlanır ve <strong>WhatsApp</strong> o metinle açılır (kayıtta numara varsa doğrudan o kişiye). WhatsApp telefonunuzda yoksa bunu size söyler ve sistemin paylaşım penceresini açar. <strong>Mesajı gönderme kararı ve gönderme işlemi sizindir</strong>; uygulama sizin adınıza hiçbir mesaj göndermez.</li>
 <li><strong>"Uygulamayı paylaş" dediğinizde</strong> — uygulamanın Google Play bağlantısını içeren sabit bir tanıtım cümlesi sistemin paylaşım penceresine verilir. Bu metinde <strong>defterinizden hiçbir bilgi yoktur</strong>.</li>
 <li><strong>"Puan verin" dediğinizde</strong> — uygulamanın Google Play sayfası Play Store uygulamasında (o yoksa tarayıcıda) açılır. Puanınızı ve yorumunuzu Google Play'e siz gönderirsiniz.</li>
-<li><strong>"Görüş bildirin" dediğinizde</strong> — telefonunuzun e-posta uygulaması, alıcısı bizim iletişim adresimiz ve konusunda uygulamanın sürüm numarası yazılı bir ileti olarak açılır. İletiye <strong>defterinizden hiçbir bilgi eklenmez</strong>; ne yazacağınıza ve gönderip göndermeyeceğinize siz karar verirsiniz. Gönderirseniz e-posta adresinizi ve yazdıklarınızı yalnız size cevap vermek için kullanırız.</li>
 <li><strong>Bir telefon numarasına dokunduğunuzda</strong> — önce "aransın mı?" diye sorulur; <strong>onaylamazsanız arama başlamaz.</strong> Onaylarsanız telefonun kendi arama ekranı açılır.</li>
 </ul>
 <p>Bu durumlarda veri, <strong>bizim değil sizin seçtiğiniz uygulamaya</strong> gider ve oradan sonrası o uygulamanın gizlilik politikasına tabidir.</p>
@@ -96,6 +95,15 @@
 <li><strong>Hata kaydı (Firebase Crashlytics):</strong> Uygulama beklenmedik bir hata verdiğinde, hatanın teknik kaydı gönderilir: hatanın kodun neresinde olduğu, uygulamanın sürümü, telefonun modeli ve Android sürümü, kurulumun rastgele bir kimliği. Amaç yalnız <strong>hatayı bulup düzeltmektir</strong>. Google bu kayıtları <strong>90 gün</strong> saklar.</li>
 </ul>
 <p><strong>Google Analytics kullanılmaz.</strong> Reklam kimliği okunmaz. Bu veriler Google'ın sunucularında, Google'ın <a href="https://firebase.google.com/support/privacy">Firebase gizlilik koşullarına</a> göre işlenir ve Türkiye dışındaki sunucularda bulunabilir.</p>
+<h3>4.2 "Görüş bildirin": uygulama içi mesaj</h3>
+<p><strong>"Görüş bildirin" dediğinizde</strong> yazdığınız mesaj, uygulamanın içinden bizim geri bildirim sunucumuza (Supabase altyapısı, HTTPS ile şifreli) gönderilir. Mesajla birlikte yalnızca şunlar gider: uygulama sürümü, telefon modeli, Android sürümü, telefonun dili ve size cevap bildirimi gönderebilmemiz için Firebase bildirim kimliği. Ayrıca telefonunuz bu iş için rastgele bir cihaz kimliği ve gizli bir anahtar üretir; böylece cevaplarımızı yalnızca sizin telefonunuz okuyabilir (sunucuda anahtarın kendisi değil, yalnız özeti saklanır).</p>
+<ul>
+<li><strong>Defterinizdeki hiçbir kayıt</strong> — hesap adları, tutarlar, telefon numaraları, belgeler — gönderilmez.</li>
+<li>Hesap açmanız, adınızı ya da e-postanızı vermeniz gerekmez. Mesaj göndermek tamamen isteğe bağlıdır.</li>
+<li>Mesajlarınızı ve cevaplarımızı uygulamada <strong>Diğer → Yanıtlar</strong> bölümünde görürsünüz; cevap geldiğinde (bildirim izni verdiyseniz) <strong>"Görüş yanıtları"</strong> bildirimi gelir.</li>
+<li>Bu bilgileri yalnızca size cevap vermek ve uygulamayı düzeltmek için kullanırız, kimseyle paylaşmayız. Kötüye kullanımı önlemek için gönderen bağlantının IP adresinin yalnız tek yönlü özeti tutulur.</li>
+<li>Mesajlarınızın silinmesini isterseniz <a href="mailto:talhatarhan@gmail.com">talhatarhan@gmail.com</a> adresine yazmanız yeterlidir.</li>
+</ul>
 <hr>
 <h2>5. Yedekler</h2>
 <ul>
@@ -107,17 +115,17 @@
 <h2>6. Bildirimler</h2>
 <p>Vade hatırlatması <strong>varsayılan olarak kapalıdır</strong>. Ayarlar ekranından açtığınızda telefon size bildirim izni sorar. İzin verirseniz, ertesi gün vadesi dolan kayıtlar için günde <strong>tek</strong> bir özet bildirim planlanır.</p>
 <p>Vade hatırlatmaları tamamen telefonunuzda üretilir ve zamanlanır; hiçbir sunucudan gelmez, çünkü defterinizi yalnız telefonunuz bilir. Ayarlardan istediğiniz an kapatabilirsiniz.</p>
-<p><strong>Duyurular</strong> ise bizden gelir (bkz. 4.1) ve herkese aynı metindir; sizin defterinizle ilgili bir şey söylemez. Android 13 ve sonrasında duyurular da bildirim izni verdiyseniz görünür; izin istemek için açılışta ayrıca soru sorulmaz.</p>
+<p><strong>Duyurular</strong> ise bizden gelir (bkz. 4.1) ve herkese aynı metindir; sizin defterinizle ilgili bir şey söylemez. <strong>Görüş yanıtları</strong> yalnız siz bize yazdıysanız ve biz cevap verdiysek gelir (bkz. 4.2); Android ayarlarından ayrı bir kanal olarak kapatılabilir. Android 13 ve sonrasında duyurular da bildirim izni verdiyseniz görünür; izin istemek için açılışta ayrıca soru sorulmaz.</p>
 <hr>
 <h2>7. İzinler</h2>
 <p>Uygulamanın istediği izinler ve gerekçeleri:</p>
-<p>Aşağıdaki liste <strong>uygulamanın birleşik manifestinden okunmuştur</strong>, tahmin değildir (15 Ekim 2026):</p>
+<p>Aşağıdaki liste <strong>uygulamanın birleşik manifestinden okunmuştur</strong>, tahmin değildir (17 Ekim 2026):</p>
 <table><thead><tr><th>İzin</th><th>Ne için</th></tr></thead><tbody>
 <tr><td><code>POST_NOTIFICATIONS</code></td><td>Vade hatırlatması — yalnız siz açarsanız istenir</td></tr>
 <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Telefon yeniden başladığında planlanmış hatırlatmanın kaybolmaması için</td></tr>
 <tr><td><code>USE_BIOMETRIC</code>, <code>USE_FINGERPRINT</code></td><td>Açılış kilidini parmak iziyle açmak — yalnız siz açarsanız kullanılır</td></tr>
 <tr><td><code>VIBRATE</code></td><td>Bildirim geldiğinde telefonun titremesi</td></tr>
-<tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Duyuru almak ve hata kaydını iletmek (bkz. 4.1). Defteriniz bu bağlantıdan gönderilmez.</td></tr>
+<tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Duyuru almak, hata kaydını iletmek ve "Görüş bildirin" mesajınızı göndermek (bkz. 4.1, 4.2). Defteriniz bu bağlantıdan gönderilmez.</td></tr>
 <tr><td><code>com.google.android.c2dm.permission.RECEIVE</code>, <code>WAKE_LOCK</code></td><td>Duyurunun, uygulama kapalıyken de telefona ulaşabilmesi (Firebase'in kendi izinleri)</td></tr>
 <tr><td><code>READ_CONTACTS</code></td><td><strong>"Rehberden seç"</strong> — yalnız siz o düğmeye bastığınızda istenir; seçtiğiniz tek kişinin adı ve telefonu forma yazılır (bkz. 3.1). İzin vermezseniz form elle doldurulmaya devam eder. Yazma izni (<code>WRITE_CONTACTS</code>) <strong>istenmez.</strong></td></tr>
 </tbody></table>
@@ -135,7 +143,7 @@
 <li><strong>Düzeltmek:</strong> Her kayıt uygulama içinden düzenlenebilir.</li>
 <li><strong>Silmek:</strong> Kayıtları tek tek silebilir ya da uygulamayı kaldırarak tümünü silebilirsiniz. Bir belgeyi kaldırdığınızda dosyası da diskten silinir. Uygulamayı kaldırmak cihazdaki yedekleri ve belgeleri de siler.</li>
 </ul>
-<p>Bizde defterinizden bir kopya bulunmadığı için, silme talebi için bize başvurmanız gerekmez. Hata kayıtları 90 gün sonra kendiliğinden silinir; daha önce silinmesini isterseniz bize yazabilirsiniz.</p>
+<p>Bizde defterinizden bir kopya bulunmadığı için, silme talebi için bize başvurmanız gerekmez. Hata kayıtları 90 gün sonra kendiliğinden silinir; daha önce silinmesini isterseniz bize yazabilirsiniz. "Görüş bildirin" ile gönderdiğiniz mesajlar ve cevaplarımız da, istediğinizde silinir (bkz. 4.2).</p>
 <hr>
 <h2>10. Değişiklikler</h2>
 <p>Bu politika değişirse, güncellenmiş metin uygulamanın mağaza sayfasında ve bu adreste yayımlanır. Yukarıdaki "Son güncelleme" tarihi değişimi gösterir.</p>
